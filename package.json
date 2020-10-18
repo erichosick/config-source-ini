@@ -1,6 +1,6 @@
 {
   "name": "@ehosick/config-source-ini",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enable config-core configuration and settings to load from ini files.",
   "author": {
     "name": "Eric Hosick",
