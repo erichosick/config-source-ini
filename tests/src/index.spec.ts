@@ -1,8 +1,8 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import { IniSource } from '../../src/index';
+import IniSource from '../../src/index';
 
-const expect = chai.expect;
+const { expect } = chai;
 chai.use(chaiAsPromised);
 
 describe('IniSource', () => {
@@ -23,7 +23,7 @@ describe('IniSource', () => {
       const fileName = `${__dirname}/test-files/ini-source/file.noext`;
       const iniSource = new IniSource(fileName);
       await expect(iniSource.loadConfig()).to.be.rejectedWith(
-        `File extension 'noext' not supported`,
+        "File extension 'noext' not supported",
       );
     });
 
@@ -38,7 +38,7 @@ describe('IniSource', () => {
     it('should exception when an empty file name is provided', async () => {
       const iniSource = new IniSource('');
       await expect(iniSource.loadConfig()).to.be.rejectedWith(
-        `File '' is not a valid or is missing a file extension`,
+        "File '' is not a valid or is missing a file extension",
       );
     });
   });
@@ -83,7 +83,7 @@ describe('IniSource', () => {
       });
     });
 
-    it(`should not care if the rootOffset is empty string ('')`, async () => {
+    it("should not care if the rootOffset is empty string ('')", async () => {
       const sourceType = await new IniSource(
         `${__dirname}/test-files/ini-source/valid-01.ini`,
         '',
